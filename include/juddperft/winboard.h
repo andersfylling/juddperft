@@ -31,7 +31,7 @@ SOFTWARE.
 
 #define _CRT_SECURE_NO_WARNINGS 1
 
-#include "engine.h"
+#include "./engine.h"
 #include <fstream>
 
 #ifndef _MSC_VER
@@ -135,6 +135,7 @@ void parse_input_dividefast(const char * s, Engine * pE);
 void parse_input_writehash(const char* s, Engine* pE);
 void parse_input_lookuphash(const char* s, Engine* pE);
 void parse_input_testExternal(const char * s, Engine * pE);
+void parse_input_testExternalEGN(const char* s, Engine* pE);
 
 // functions for sending output commands
 void send_output_feature(Engine* pE);

@@ -58,7 +58,7 @@ namespace juddperft {
 
 std::ofstream logfile("perft.txt");
 
-std::array<WinboardInputCommandDefinition, 56> winboardInputCommands = {{
+std::array<WinboardInputCommandDefinition, 57> winboardInputCommands = {{
 	{"xboard",parse_input_xboard,false},
 	{"protover",parse_input_protover,false},						/* N */
 	{"accepted",parse_input_accepted,false},
@@ -117,7 +117,8 @@ std::array<WinboardInputCommandDefinition, 56> winboardInputCommands = {{
 	{ "dividefast",parse_input_dividefast,true },
 	{"writehash",parse_input_writehash,false},
 	{"lookuphash",parse_input_lookuphash,false},
-	{"test-external", parse_input_testExternal,true}
+	{"test-external", parse_input_testExternal,true},
+	{"test-external-egn", parse_input_testExternalEGN,true}
 }};
 
 int winBoard(Engine* pE)
@@ -523,6 +524,42 @@ void parse_input_testExternal(const char* s, Engine* pE) {
 		std::cout << "<external app> \"<Fen String>\" <depth> <perft value>\n";
 		std::cout << "external app is expected to terminate with EXIT_SUCCESS (0) if it agrees with\n";
 		std::cout << "the perft value for the given position\n" << std::endl;
+	}
+
+#endif
+}
+
+
+void parse_input_testExternalEGN(const char* s, Engine* pE) {
+#ifdef INCLUDE_DIAGNOSTICS
+	bool badArgs = true; // anticipate the worst :-)
+	if (s != nullptr && strlen(s) != 0) {
+		std::string str(s);
+		std::istringstream iss(str);
+		std::vector<std::string> args;
+		std::string arg;
+		while (std::getline(iss, arg, ' ')) {
+			args.push_back(arg);
+		}
+
+		if (args.size() == 1) {
+			badArgs = false;
+			std::string perftValidatorPath(args.at(0));
+			std::cout << "\nTesting against external engine (EGN version): " << perftValidatorPath;
+			std::cout << "\nPosition:\n" << std::endl;
+			ChessPosition currentPosition = pE->currentPosition;
+			dumpChessPosition(currentPosition);
+			std::cout << "Off we go ... " << std::endl;
+			findPerftDifference(perftValidatorPath, &currentPosition);
+		}
+	}
+
+	if (badArgs) {
+		std::cout << "\nUsage: text-external <path to external app>\n\n";
+		std::cout << "This will issue the following system command for each test position\n";
+		std::cout << "<external app> \"<Fen String>\"\n";
+		std::cout << "external app is expected to print every EGN <EGN\\n> for a given FEN\n";
+		std::cout << "This is will then be match with juddperft outputs to find differences and/or missing moves\n" << std::endl;
 	}
 
 #endif

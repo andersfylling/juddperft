@@ -29,6 +29,7 @@ SOFTWARE.
 #include "movegen.h"
 
 #include <string>
+#include <array>
 
 namespace juddperft {
 
@@ -42,10 +43,11 @@ namespace juddperft {
 // perftValidateWithExternal() - validates perft calculation against external engine:
 int perftValidateWithExternal(const std::string& validatorPath, const std::string& fenString, int depth, int64_t value);
 void findPerftBug(const std::string& validatorPath, const ChessPosition* pP, int depth);
+std::array<std::string, 256> getEGNMovesFromEngine(const std::string cmd);
+void findPerftDifference (const std::string& validatorPath, const ChessPosition* pP);
 void runTestSuite();
 void dumpPerftScoreFfromFEN(const char* pzFENstring, unsigned int depth, uint64_t correctAnswer);
 
 #endif // INCLUDE_DIAGNOSTICS
 }
 #endif //  _DIAGNOSTICS_H
-
