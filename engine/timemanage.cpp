@@ -24,26 +24,20 @@ SOFTWARE.
 
 */
 
-// engine.cpp
-
-#include "engine.h"
+#include "juddperft/timemanage.h"
 
 namespace juddperft {
 
-	Engine::Engine()
-	{
-		Engine::isThinking = false;
-		Engine::isPondering = false;
-		Engine::ponderingActivated = false;
-		Engine::stopSignal = false;
-		Engine::depth = 8;
-		Engine::forceMode = false;
-		Engine::showThinking = true;
-		Engine::nNumCores = MAX_THREADS;	// Hard maximum: 
-											// App should only ever dispatch std::min(concurrency, nNumCores, MAX_THREADS) threads
-	}
+TimeManager::TimeManager()
+{
+	m_fTimeRemaining = 300.0;
+	m_fCurrentTimeControl = 300.0;
+	m_nMoveNumber = 0;
+}
 
-	// global Engine instance:
-	Engine theEngine;
+double TimeManager::getTimeForMove()
+{
+	return m_fTimeRemaining / 15.0;	// to-do: Obviously, this needs more work :-)
+}
 
 } // namespace juddperft

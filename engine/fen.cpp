@@ -24,9 +24,9 @@ SOFTWARE.
 
 */
 
-#include "fen.h"
+#include "juddperft/fen.h"
 
-/////////////////////////////////////////////////////////	
+/////////////////////////////////////////////////////////
 // readFen() - Reads a FEN string and sets up position
 // Accordingly..
 /////////////////////////////////////////////////////////
@@ -214,13 +214,13 @@ namespace juddperft {
 		}
 
 #ifdef _USE_HASH
-		pP->calculateHash(); // Important: always do this after setting up a position ! 
+		pP->calculateHash(); // Important: always do this after setting up a position !
 #endif
 
 		return true;
 	}
 
-	/////////////////////////////////////////////////////////	
+	/////////////////////////////////////////////////////////
 	// writeFen() - Generates a FEN string from a Position
 	/////////////////////////////////////////////////////////
 
@@ -291,7 +291,7 @@ namespace juddperft {
 						break;
 					} // ends switch
 					nBlanks = 0;
-				} // ends else	
+				} // ends else
 			}
 
 

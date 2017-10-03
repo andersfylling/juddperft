@@ -24,13 +24,13 @@ SOFTWARE.
 
 */
 
-#include "Juddperft.h"
-#include "movegen.h"
-#include "fen.h"
-#include "search.h"
-#include "winboard.h"
-#include "diagnostics.h"
-#include "hashtable.h"
+#include "juddperft/Juddperft.h"
+#include "juddperft/movegen.h"
+#include "juddperft/fen.h"
+#include "juddperft/search.h"
+#include "juddperft/winboard.h"
+#include "juddperft/diagnostics.h"
+#include "juddperft/hashtable.h"
 
 #ifdef _MSC_VER
 #include <intrin.h>
@@ -42,29 +42,6 @@ SOFTWARE.
 #include <cinttypes>
 #include <iostream>
 #include <atomic>
-
-using namespace juddperft;
-
-int main(int argc, char *argv[], char *envp[])
-{
-	//	std::cout.imbue(std::locale(""));
-
-#ifdef _USE_HASH
-	uint64_t nBytesToAllocate = 1000000000; // <-- Set how much RAM to use here (more RAM -> faster !!!)
-
-	while (!setMemory(nBytesToAllocate)) {
-		nBytesToAllocate >>= 1;	// Progressively halve until acceptable size found
-		if (nBytesToAllocate < MINIMAL_HASHTABLE_SIZE)
-			return EXIT_FAILURE;	// not going to end well ...
-	}
-#endif
-	setProcessPriority();
-
-	// runTestSuite();
-
-	winBoard(&theEngine);
-	return EXIT_SUCCESS;
-}
 
 namespace juddperft {
 
@@ -101,3 +78,25 @@ namespace juddperft {
 	}
 
 } // namespace juddperft
+
+
+int main(int argc, char *argv[], char *envp[])
+{
+	//	std::cout.imbue(std::locale(""));
+
+#ifdef _USE_HASH
+	uint64_t nBytesToAllocate = 1000000000; // <-- Set how much RAM to use here (more RAM -> faster !!!)
+
+	while (!::juddperft::setMemory(nBytesToAllocate)) {
+		nBytesToAllocate >>= 1;	// Progressively halve until acceptable size found
+		if (nBytesToAllocate < MINIMAL_HASHTABLE_SIZE)
+			return EXIT_FAILURE;	// not going to end well ...
+	}
+#endif
+	::juddperft::setProcessPriority();
+
+	// runTestSuite();
+
+	::juddperft::winBoard(&::juddperft::theEngine);
+	return EXIT_SUCCESS;
+}

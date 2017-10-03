@@ -24,8 +24,8 @@ SOFTWARE.
 
 */
 
-#include "hashtable.h" 
-#include "search.h"
+#include "juddperft/hashtable.h"
+#include "juddperft/search.h"
 
 #include <iostream>
 #include <random>
@@ -41,7 +41,7 @@ namespace juddperft {
 	bool ZobristKeySet::generate()
 	{
 		// Create a Random Number Generator, using the 64-bit Mersenne Twister Algorithm
-		// with a uniform distribution of ints 
+		// with a uniform distribution of ints
 		std::random_device rd;
 		std::mt19937_64 e2(rd());
 		std::uniform_int_distribution<unsigned long long int> dist(0, 0xffffffffffffffff);

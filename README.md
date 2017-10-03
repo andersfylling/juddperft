@@ -1,7 +1,7 @@
 ## Synopsis
-juddperft is a "perft" (short for "PERF-ormance T-est") utility, which is used to count the number of chess positions reachable from a given starting position, after a given number of moves (depth). 
+juddperft is a "perft" (short for "PERF-ormance T-est") utility, which is used to count the number of chess positions reachable from a given starting position, after a given number of moves (depth).
 
-For example, from the normal starting position in chess, white has **20** available moves, resulting in **20** possible positions after white has made the first move. After Black replies, there are **400** possibilities, and after white replies again, there are **8902**. We can use a type of short-hand notation to respresent this: **perft(1)=20, perft(2)=400, perft(3)=8902** and so on ... 
+For example, from the normal starting position in chess, white has **20** available moves, resulting in **20** possible positions after white has made the first move. After Black replies, there are **400** possibilities, and after white replies again, there are **8902**. We can use a type of short-hand notation to respresent this: **perft(1)=20, perft(2)=400, perft(3)=8902** and so on ...
 
 The job of Juddperft is to calculate these perft numbers to an arbitrary depth, by counting all of the legal chess positions reached at a given depth. However, the perft numbers become very large, very quickly, making it difficult to calculate the higher perft numbers within an acceptable timeframe.
 
@@ -9,7 +9,7 @@ The job of Juddperft is to calculate these perft numbers to an arbitrary depth, 
 *Screenshot of juddperft in action, showing the results for a search depth of 8*
 
 ## Description of code
-Chess positions are represented internally as a set of *four* 64-bit "bitBoards", allowing each of the 64 squares on the chess board to be populated by one of 16 possible values, representing the piece (or absence of a piece) occupying each square, and it's colour. 
+Chess positions are represented internally as a set of *four* 64-bit "bitBoards", allowing each of the 64 squares on the chess board to be populated by one of 16 possible values, representing the piece (or absence of a piece) occupying each square, and it's colour.
 
 In dealing with bitboards, there is inevitably a large amount of "bit-twiddling" involved (lots of ANDs / ORs / XORs / ones-complements / bit-shifts etc). This is pretty standard for chess programs.  
 
@@ -28,7 +28,7 @@ I have been inspired by other authors of perft utilities, and the sheer processi
 ## Usage
 
 JuddPerft is an interactive console application (since it is based on a stripped-down xboard / winboard engine).
-Run the program as a console application, and enter commands as required. 
+Run the program as a console application, and enter commands as required.
 Accepted commands are as follows:
 
 **perft &lt;depth&gt;**
@@ -150,3 +150,6 @@ Additional information can be found on the [Chess Programming Wiki](https://ches
 ~~~
 g++ -pthread -std=c++11 *.cpp -o ./juddperft-gcc -latomic -O3
 ~~~
+
+Running `./cmake-build.sh` will build this project using CMakeLists.txt. I've added support for linter in atom.
+If you want a fresh build; running `./cmake-build-fresh.sh` will delete everything in the build directory and rebuild everything.
