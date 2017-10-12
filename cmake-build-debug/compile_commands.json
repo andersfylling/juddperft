@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/Juddperft.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/Juddperft.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/Juddperft.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/movegen.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/movegen.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/movegen.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/search.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/search.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/search.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/hashtable.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/hashtable.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/hashtable.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/fen.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/fen.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/fen.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/engine.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/engine.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/engine.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/diagnostics.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/diagnostics.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/diagnostics.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/timemanage.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/timemanage.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/timemanage.cpp"
+},
+{
+  "directory": "/home/anders/github.com/sciencefyll/juddperft/cmake-build-debug/engine",
+  "command": "/usr/bin/c++  -DJUDDPERFT_PRODUCTION -I/home/anders/github.com/sciencefyll/juddperft/include  -Wall -fPIC -g   -std=gnu++11 -o CMakeFiles/juddperft.dir/winboard.cpp.o -c /home/anders/github.com/sciencefyll/juddperft/engine/winboard.cpp",
+  "file": "/home/anders/github.com/sciencefyll/juddperft/engine/winboard.cpp"
+}
+]

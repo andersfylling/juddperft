@@ -42,9 +42,10 @@ namespace juddperft {
 
 // perftValidateWithExternal() - validates perft calculation against external engine:
 int perftValidateWithExternal(const std::string& validatorPath, const std::string& fenString, int depth, int64_t value);
-void findPerftBug(const std::string& validatorPath, const ChessPosition* pP, int depth);
+bool findPerftBug(const std::string& validatorPath, const ChessPosition* pP, int depth);
 std::array<std::string, 256> getEGNMovesFromEngine(const std::string cmd);
 void findPerftDifference (const std::string& validatorPath, const ChessPosition* pP);
+bool locatePerftDifference (const std::string& validatorPath, const ChessPosition* pP, int depth);
 void runTestSuite();
 void dumpPerftScoreFfromFEN(const char* pzFENstring, unsigned int depth, uint64_t correctAnswer);
 
